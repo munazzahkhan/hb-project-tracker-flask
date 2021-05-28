@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Project Info</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p><h3>Project Description:</h3> {{ description }}</p>
+  <p><h3>Max Grade: </h3> {{ max_grade }}</p>
+  <h2>Students who completed {{ title }}</h2>
+  <ul>
+    {% for grade in grades %}
+    <li><a href="/student?github={{ grade.student_github }}">{{ grade.student_github }}</a> got a {{ grade.grade }} </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
